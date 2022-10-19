@@ -68,10 +68,8 @@ const Card = styled.div`
     position: absolute;
     left: 0;
     object-fit: cover;
-   opacity: 0.9;
+    opacity: 0.9;
   }
-
-  
 
   P {
     position: absolute;
@@ -84,8 +82,6 @@ const Card = styled.div`
     justify-content: center;
     font-weight: bold;
   }
-
-
 `;
 
 export default Popular;
