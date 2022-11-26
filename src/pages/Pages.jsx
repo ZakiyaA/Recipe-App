@@ -1,10 +1,7 @@
 import React from 'react'
 import Category from '../components/Category';
-import Cusine from './Cusine';
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
+import Cuisine from './Cuisine';
+import {Routes, Route} from "react-router-dom";
 import Home from './Home'
 
 const Pages = () => {
@@ -13,7 +10,7 @@ const Pages = () => {
   
     <Routes>
       <Route path="/" element={ <Home />} />
-        <Route path="/Cusine" element={<Cusine />} /> 
+        <Route path="/cuisine/:type" element={<Cuisine />} /> 
      
     </Routes>
 

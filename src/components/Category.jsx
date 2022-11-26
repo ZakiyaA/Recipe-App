@@ -8,24 +8,24 @@ import { Link } from "react-router-dom";
 
 const Category = () => {
   return (
-    <List>Category
+    <List>
 
         <nav>
-        <Link to="/Cusine/Italian"> <FaPizzaSlice/></Link>
+        <Link to="/cuisine/Italian"> <FaPizzaSlice/></Link>
             <h4>Italian</h4>
         </nav>
         <nav>
-        <Link to="/Cusine/American"> <FaHamburger/></Link>
+        <Link to="/cuisine/American"> <FaHamburger/></Link>
         
             <h4>American</h4>
         </nav>
         <nav>
-        <Link to="/Cusine/Thai"> <GiNoodles/></Link>
+        <Link to="/cuisine/Thai"> <GiNoodles/></Link>
            
             <h4>Thai</h4>
         </nav>
         <nav>
-        <Link to="/Cusine/Chinesse">  <GiChopsticks/></Link>
+        <Link to="/cuisine/Chinesse">  <GiChopsticks/></Link>
            
             <h4>Chinesse</h4>
         </nav>
