@@ -15,7 +15,7 @@ const getVeggies = async () => {
    if(check) {
     setVeggies(JSON.parse(check));
    } else {
-    const api = await fetch ( `https://api.spoonacular.com/recipes/random?apiKey=a428daa4b83f4cb0928f1981f04cd24d&number=10&tags=vegetarian`)
+    const api = await fetch ( `https://api.spoonacular.com/recipes/random?apiKey=a428daa4b83f4cb0928f1981f04cd24d&number=20&tags=vegetarian`)
     const data = await api.json();
     localStorage.setItem("veggies", JSON.stringify(data.recipes));
     setVeggies(data.recipes)
