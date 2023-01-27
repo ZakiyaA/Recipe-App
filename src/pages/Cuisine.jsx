@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
@@ -25,8 +25,10 @@ const Cuisine = () => {
         {cuisine.map((recipe) => {
           return (
               <Card  key={recipe.id}>
+                 <Link to={'/recipe/' + recipe.id}>
                 <img src={recipe.image}/> 
                 <h4>{recipe.title}</h4> 
+                </Link>
               </Card>
           );
     })}
