@@ -15,8 +15,8 @@ const Category = () => {
             <h4>Italian</h4>
             </SLink>
         
-        <SLink to="/cuisine/American"> <FaHamburger/>
-          <h4>American</h4>
+        <SLink to="/cuisine/Mediterranean"> <FaHamburger/>
+          <h4>Mediterranean</h4>
           </SLink>
        
         <SLink to="/cuisine/Thai">

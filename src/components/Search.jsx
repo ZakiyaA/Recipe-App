@@ -21,7 +21,7 @@ const Search = () => {
         onChange={(e) => setInput(e.target.value)}
         
         value={input}
-        placeholder="Search for a receipet..."
+        placeholder="Search for a recipe..."
       />
     </Form>
   )
@@ -51,6 +51,7 @@ const Input = styled.input`
   height: 0.5rem;
   border: none;
   color: white;
+  padding: 0.5rem;
   transition: margin 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
   &:active {
     outline: none;

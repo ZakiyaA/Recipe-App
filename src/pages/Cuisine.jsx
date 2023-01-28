@@ -1,7 +1,6 @@
 import {React, useState, useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
 const Cuisine = () => {

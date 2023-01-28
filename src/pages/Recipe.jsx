@@ -12,7 +12,7 @@ const Recipe = () => {
   const response = await fetch(`https://api.spoonacular.com/recipes/${recipeName.name}/information?apiKey=a428daa4b83f4cb0928f1981f04cd24d`);
   const receipes = await response.json();
     setRecipetDetails(receipes);
-    console.log("****",receipes)
+    console.log("****",receipes.analyzedInstructions)
    }
    useEffect(() => {
     fetRecipe();
@@ -22,8 +22,8 @@ const Recipe = () => {
       <>
         <Grid>   
          
-              <Container1  key={receipeDetails.id} >
-                <h4>{receipeDetails.title}  </h4> 
+              <Container1   >
+                <h4 key={receipeDetails.id} >{receipeDetails.title}  </h4> 
                 {/* <img src='https://spoonacular.com/recipeImages/715455-556x370.jpg'  width='100%' mix-height='100%'/> */}
                 {/* <span><LoremIpsum p={1} /> </span> */}
                 <img src={receipeDetails.image}  width='100%' mix-height='100%'/> 
@@ -36,14 +36,30 @@ const Recipe = () => {
               </Button>
             <Button className= {active === "Ingredients" ? "active" : ""}
               onClick={() => setActive("Ingredients")} >Ingredients</Button>
-            <div>
-              <h6>
-              {receipeDetails.summary?.replace(/<[^>]*>?/gm, '')}
-              </h6>
-              <h6>
-                {receipeDetails.instructions?.replace(/<[^>]*>?/gm, '')} 
-                </h6>
-            </div>
+            
+            { active === "Instructions"  && (
+              <div key={receipeDetails.id}> 
+              <h5> **** {receipeDetails.summary?.replace(/<[^>]*>?/gm, '')} </h5>
+              {/* {receipeDetails.analyzedInstructions.map(Instruction => 
+              console.log(receipeDetails.analyzedInstructions)
+                // <li>{Instruction.step}</li>
+                )} */}
+
+              
+              {/* <h5>  {receipeDetails.analyzedInstructions?.replace(/<[^>]*>?/gm, '')} </h5>  */}
+              </div>
+            )}
+
+            { active === "Ingredients"  && (
+              <ul>
+                {receipeDetails.extendedIngredients.map( ingredient => 
+                   <li key={ingredient.id}>{ingredient.original}</li>
+
+                )}
+              {/* <h6> {receipeDetails.extendedIngredients?.replace(/<[^>]*>?/gm, '')} </h6>  */}
+              </ul>
+            )}
+          
          </Container2>
        
        </Grid>
@@ -79,5 +95,7 @@ grid-template-areas:
 
 grid-template-columns: 0.5fr 1fr;
 `;
+
+
 
 export default Recipe;
