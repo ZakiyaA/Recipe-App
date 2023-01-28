@@ -23,21 +23,27 @@ const Recipe = () => {
         <Grid>   
          
               <Container1  key={receipeDetails.id} >
-                <h4>{receipeDetails.title}   uuuuu </h4> 
-                <img src='https://spoonacular.com/recipeImages/715455-556x370.jpg'  width='100%' mix-height='100%'/>
+                <h4>{receipeDetails.title}  </h4> 
+                {/* <img src='https://spoonacular.com/recipeImages/715455-556x370.jpg'  width='100%' mix-height='100%'/> */}
                 {/* <span><LoremIpsum p={1} /> </span> */}
-                {/* <img src={receipeDetails.image}/>  */}
+                <img src={receipeDetails.image}  width='100%' mix-height='100%'/> 
               </Container1>
 
               <Container2 key={receipeDetails.id}>
             <Button className= {active === "Instructions" ? "active" : ""}
-              onClick={() => setActive("Instructions")}>Instructions</Button>
+              onClick={() => setActive("Instructions")}>
+                Instructions
+              </Button>
             <Button className= {active === "Ingredients" ? "active" : ""}
               onClick={() => setActive("Ingredients")} >Ingredients</Button>
-            <span>
-            <LoremIpsum p={1} />
-              {/* {receipeDetails.instructions}  */}
-              </span>
+            <div>
+              <h6>
+              {receipeDetails.summary?.replace(/<[^>]*>?/gm, '')}
+              </h6>
+              <h6>
+                {receipeDetails.instructions?.replace(/<[^>]*>?/gm, '')} 
+                </h6>
+            </div>
          </Container2>
        
        </Grid>
@@ -60,7 +66,7 @@ const Button = styled.button`
 `;
 
 const Container1 = styled.div`
-  text-align: center;
+  text-align: left;
 `
 
 const Container2 = styled(Container1)``;
