@@ -1,18 +1,18 @@
 import {React, useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { LoremIpsum } from 'react-lorem-ipsum';
+import {useTranslation } from "react-i18next";
 
 const Recipe = () => {
+  const { t, i18n } = useTranslation();
   const [receipeDetails, setRecipetDetails] = useState({});
-  const [active, setActive] = useState("Instructions");
+  const [activeSelection, setActiveSelection] = useState("Instructions");
   const recipeName  = useParams();
-  console.log("WWW", recipeName.name)
+  document.body.dir = i18n.dir();
   const fetRecipe = async () => {
   const response = await fetch(`https://api.spoonacular.com/recipes/${recipeName.name}/information?apiKey=a428daa4b83f4cb0928f1981f04cd24d`);
   const receipes = await response.json();
     setRecipetDetails(receipes);
-    console.log("****",receipes.analyzedInstructions)
    }
    useEffect(() => {
     fetRecipe();
@@ -21,45 +21,31 @@ const Recipe = () => {
     return (
       <>
         <Grid>   
-         
-              <Container1   >
-                <h4 key={receipeDetails.id} >{receipeDetails.title}  </h4> 
-                {/* <img src='https://spoonacular.com/recipeImages/715455-556x370.jpg'  width='100%' mix-height='100%'/> */}
-                {/* <span><LoremIpsum p={1} /> </span> */}
-                <img src={receipeDetails.image}  width='100%' mix-height='100%'/> 
-              </Container1>
+          <Container1   >
+            <h4 key={receipeDetails.id} >{receipeDetails.title}  </h4> 
+            <img src={receipeDetails.image}  width='100%' mix-height='100%'/> 
+          </Container1>
 
-              <Container2 key={receipeDetails.id}>
-            <Button className= {active === "Instructions" ? "active" : ""}
-              onClick={() => setActive("Instructions")}>
-                Instructions
+          <Container2 key={receipeDetails.id} >
+            <Button className= {activeSelection === "Instructions" ? "active" : ""}
+              onClick={() => setActiveSelection("Instructions")}>
+                {t("Instruction")}
               </Button>
-            <Button className= {active === "Ingredients" ? "active" : ""}
-              onClick={() => setActive("Ingredients")} >Ingredients</Button>
-            
-            { active === "Instructions"  && (
+            <Button className= {activeSelection === "Ingredients" ? "active" : ""}
+              onClick={() => setActiveSelection("Ingredients")} >{t("Ingredients")}</Button>
+            { activeSelection === "Instructions"  && (
               <div key={receipeDetails.id}> 
-              <h5> **** {receipeDetails.summary?.replace(/<[^>]*>?/gm, '')} </h5>
-              {/* {receipeDetails.analyzedInstructions.map(Instruction => 
-              console.log(receipeDetails.analyzedInstructions)
-                // <li>{Instruction.step}</li>
-                )} */}
-
-              
-              {/* <h5>  {receipeDetails.analyzedInstructions?.replace(/<[^>]*>?/gm, '')} </h5>  */}
+              <h5>  {receipeDetails.summary?.replace(/<[^>]*>?/gm, '')} </h5> 
+              <h5>  {receipeDetails.instructions?.replace(/<[^>]*>?/gm, '')} </h5> 
               </div>
             )}
-
-            { active === "Ingredients"  && (
+            { activeSelection === "Ingredients"  && (
               <ul>
                 {receipeDetails.extendedIngredients.map( ingredient => 
-                   <li key={ingredient.id}>{ingredient.original}</li>
-
-                )}
-              {/* <h6> {receipeDetails.extendedIngredients?.replace(/<[^>]*>?/gm, '')} </h6>  */}
+                   <li key={ingredient.id}>{ingredient.name}</li>
+                )} 
               </ul>
             )}
-          
          </Container2>
        
        </Grid>

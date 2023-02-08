@@ -3,38 +3,49 @@ import { useState } from 'react';
 import styled from "styled-components";
 import { BiSearchAlt } from 'react-icons/bi';  
 import { useNavigate } from 'react-router-dom';
+import {useTranslation } from "react-i18next";
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Search = () => {
   const [input, setInput] = useState('');
   const navigate = useNavigate();
-
+  const { t } = useTranslation();
   function handleSubmit(e) {
         e.preventDefault();
-        console.log('You clicked submit.');
         navigate('/searched/' + input);
       }
 
   return (
+    <Container >
     <Form onSubmit={handleSubmit}>
       <BiSearchAlt/>
       <Input
         onChange={(e) => setInput(e.target.value)}
-        
         value={input}
-        placeholder="Search for a recipe..."
+        placeholder={t("Recipe")}
       />
     </Form>
+    <LanguageSwitcher/>
+    </Container >
   )
 }
 
+
+const   Container = styled.div `
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+`
 const Form = styled.form`
   position: relative;
   display: flex;
+  width: 90%;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(#494949, #313131);
+  background: palevioletred;
   padding: 1rem;
+  margin-top: 3rem;
   border-radius: 10rem;
 
   svg {

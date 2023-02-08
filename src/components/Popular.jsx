@@ -3,10 +3,18 @@ import styled from 'styled-components';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { Link } from 'react-router-dom';
+import i18n from '../i18n';
+import {useTranslation } from "react-i18next";
 
 
 const Popular = () => {
 const [popular, setPopular] = useState([]);
+document.body.dir = i18n.dir();
+const { t } = useTranslation();
+
+
+
+
 useEffect(() => {
     getPopular();
 } , []);
@@ -23,9 +31,13 @@ const getPopular = async () => {
     // console.log(data);
   }
 };
+
+
+
+
 return (
   <>
-  <h2>popular Picks</h2>
+  <h2>{t("popularPicks")}</h2>
    <Wrapper>
     <Splide 
       options={ {
@@ -41,7 +53,7 @@ return (
           <Card >
           <Link to={'/recipe/' + recipe.id} >
             <p>{recipe.title}</p> 
-            <img src={recipe.image}/> 
+            <img src={recipe.image} width='100%' mix-height='100%'/> 
           </Link>
           </Card>
         </SplideSlide>
@@ -66,12 +78,12 @@ const Card = styled.div`
   
   img {
     border-radius: 10px;
-    min-height: 100%;
-    min-width: 100%;
+    min-height: 90%;
+    min-width: 90%;
     position: absolute;
     left: 0;
     object-fit: cover;
-    opacity: 0.9;
+    opacity: 0.8;
   }
 
   P {
@@ -80,7 +92,7 @@ const Card = styled.div`
     left: 50%
     buttom: 80%;
     color: white;
-    font-size: 0.9rem
+    font-size: 0.5rem
     text-align: center;
     justify-content: center;
     font-weight: bold;

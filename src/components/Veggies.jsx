@@ -3,10 +3,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
 
 
 const Veggies = () => {
 const [veggies, setVeggies] = useState([]);
+const { t } = useTranslation();
 useEffect(() => {
     getVeggies();
 } , []);
@@ -25,7 +28,7 @@ const getVeggies = async () => {
 };
 return (
   <>
-   <h2>Veggies Picks</h2>
+   <h2>{t("VeggiesPicks")}</h2>
    <Wrapper>
     <Splide 
       options={ {
@@ -33,6 +36,8 @@ return (
       gap   : '1rem',
       perPage: 4,
       perMove: 1,
+      // paginationDirection: false
+      // showsPaginatio: false
       } } 
       >
     {veggies.map((recipe) => {
@@ -71,7 +76,7 @@ const Card = styled.div`
     position: absolute;
     left: 0;
     object-fit: cover;
-    opacity: 0.9;
+    opacity: 0.8;
     
   }
 
@@ -86,7 +91,8 @@ const Card = styled.div`
     justify-content: center;
     font-weight: bold;
   }
-`;
+`
+;
 
 export default Veggies;
  

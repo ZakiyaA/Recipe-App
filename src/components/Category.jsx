@@ -1,31 +1,32 @@
 import React from 'react'
 import { FaPizzaSlice } from 'react-icons/fa';    
-import { FaHamburger } from 'react-icons/fa'; 
+import { TbSoup } from 'react-icons/tb'; 
 import { GiNoodles } from 'react-icons/gi'; 
-import { GiChopsticks } from 'react-icons/gi'; 
+import { BiDish } from 'react-icons/bi'; 
 import styled from 'styled-components';
 import { NavLink } from "react-router-dom";
-
+import {useTranslation } from "react-i18next";
 const Category = () => {
+  const { t } = useTranslation();
   return (
     <List>
 
         
         <SLink to="/cuisine/Italian"> <FaPizzaSlice/>
-            <h4>Italian</h4>
+            <h4>{t("Italian")}</h4>
             </SLink>
         
-        <SLink to="/cuisine/Mediterranean"> <FaHamburger/>
-          <h4>Mediterranean</h4>
+        <SLink to="/cuisine/Jewish"> <TbSoup/>
+          <h4>{t("Jewish")}</h4>
           </SLink>
        
-        <SLink to="/cuisine/Thai">
+        <SLink to="/cuisine/Greek">
           <GiNoodles/>
-          <h4>Thai</h4>
+          <h4>{t("Greek")}</h4>
         </SLink>
-        <SLink to="/cuisine/Chinese">  
-          <GiChopsticks/>
-          <h4>Chinesse</h4>
+        <SLink to="/cuisine/Indian">  
+          <BiDish/>
+          <h4>{t("Indian")}</h4>
           </SLink>
        </List>
    
@@ -40,27 +41,27 @@ margin : 2rem 0rem;
 `
 
 const SLink = styled(NavLink)`
-background: linear-gradient(#494949, #313131);
+background: linear-gradient(#494949, palevioletred);
 display: flex;
 flex-direction: column;
 align-items: center;
 color: white;
 text-decoration: none;
-width: 80px;
-height: 80px;
+width: 100px;
+height: 100px;
 border-radius: 50%;
 cursor: pointer;
-transform: scale(0.8);
+transform: scale(0.7);
 
 svg {
-    font-size: 90px;
+    font-size: 95px;
 }
 
 h4 {
     font-size: 15px;
 }
 &.active{
-  background: linear-gradient(#f27121, #e94057);
+  background: linear-gradient(palevioletred, #e94057);
 }`;
 
 export default Category;
