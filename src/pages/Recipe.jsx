@@ -5,10 +5,10 @@ import {useTranslation } from "react-i18next";
 
 const Recipe = () => {
   const { t, i18n } = useTranslation();
+  document.body.dir = i18n.dir();
   const [receipeDetails, setRecipetDetails] = useState({});
   const [activeSelection, setActiveSelection] = useState("Instructions");
   const recipeName  = useParams();
-  document.body.dir = i18n.dir();
   const fetRecipe = async () => {
   const response = await fetch(`https://api.spoonacular.com/recipes/${recipeName.name}/information?apiKey=a428daa4b83f4cb0928f1981f04cd24d`);
   const receipes = await response.json();
