@@ -13,20 +13,20 @@ const Category = () => {
 
         
         <SLink to="/cuisine/Italian"> <FaPizzaSlice/>
-            <h4>{t("Italian")}</h4>
+            <p>{t("Italian")}</p>
             </SLink>
         
         <SLink to="/cuisine/Jewish"> <TbSoup/>
-          <h4>{t("Jewish")}</h4>
+          <p>{t("Jewish")}</p>
           </SLink>
        
         <SLink to="/cuisine/Greek">
           <GiNoodles/>
-          <h4>{t("Greek")}</h4>
+          <p>{t("Greek")}</p>
         </SLink>
         <SLink to="/cuisine/Indian">  
           <BiDish/>
-          <h4>{t("Indian")}</h4>
+          <p>{t("Indian")}</p>
           </SLink>
        </List>
    
@@ -54,11 +54,12 @@ cursor: pointer;
 transform: scale(0.7);
 
 svg {
-    font-size: 95px;
+    font-size: 100px;
+    transform: translate(0px, 13px);
 }
 
-h4 {
-    font-size: 15px;
+p {
+    font-size: 18px;
 }
 &.active{
   background: linear-gradient(palevioletred, #e94057);

@@ -13,6 +13,7 @@ resources: {
     en: {
         translation:  {
             "title": "Recipe-App",
+            "Home": "Home",
             "Instruction": "Instruction",
             "Italian": "italian",
             "Jewish": "jewish",
@@ -20,8 +21,11 @@ resources: {
             "Indian": "Indian",
             "Recipe": "Search for a recipe",
             "Ingredients": "Ingredients",
-            "popularPicks": "popular Picks",
-            "VeggiesPicks": "Veggies Picks"
+            "RecipeList": "Recipe List",
+            "VeggiesPicks": "Veggies Picks",
+            "cardImage": "Card Image",
+            "RecipeDetails": "Recipe Details",
+            "RecipeImage": "Recipe Image"
           }
         
      
@@ -30,6 +34,7 @@ resources: {
     ar: {
       translation:  {
         "title": "تطبيق وصفات",
+        "Home": "الصفحة الرئيسية",
         "Instruction": "تعلبمات",
         "Italian": "إيطالية",
         "Jewish": "يهودية",
@@ -37,8 +42,11 @@ resources: {
         "Indian": "هندية",
         "Recipe": "ابحث عن وصفة",
         "Ingredients": "مكونات",
-        "popularPicks": "مختارات شائعة",
-        "VeggiesPicks": "مختارات الخضار"
+        "RecipeList": "قائمة الوصفات",
+        "VeggiesPicks": "مختارات الخضار",
+        "cardImage": "صورة الوصفة",
+        "RecipeDetails": "تفاصبل الوصفة",
+        "RecipeImage": "صورة الوصفة"
       },
     },
   },

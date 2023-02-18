@@ -8,20 +8,33 @@ const Recipe = () => {
   document.body.dir = i18n.dir();
   const [receipeDetails, setRecipetDetails] = useState({});
   const [activeSelection, setActiveSelection] = useState("Instructions");
-  const recipeName  = useParams();
-  const fetRecipe = async () => {
-  const response = await fetch(`https://api.spoonacular.com/recipes/${recipeName.name}/information?apiKey=a428daa4b83f4cb0928f1981f04cd24d`);
-  const receipes = await response.json();
-    setRecipetDetails(receipes);
+  const [recipeCard, setRecipeCard] = useState()
+  const recipeID  = useParams();
+
+  const fetchRecipe = async () => {
+  const response = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/information?apiKey=a428daa4b83f4cb0928f1981f04cd24d`);
+  const recipes = await response.json();
+    setRecipetDetails(recipes);
    }
-   useEffect(() => {
-    fetRecipe();
-    } , [ recipeName.name]);
+  
+   const fetchRecipeCard = async () => {
+    const response1 = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/card?apiKey=a428daa4b83f4cb0928f1981f04cd24d`);
+    const cards = await response1.json();
+    // console.log(cards)
+    setRecipeCard(cards);
+     }
+
+  useEffect(() => {
+    fetchRecipe();
+    fetchRecipeCard();
+    } , [ recipeID.name]);
+
+
     
     return (
       <>
         <Grid>   
-          <Container1   >
+          <Container1>
             <h4 key={receipeDetails.id} >{receipeDetails.title}  </h4> 
             <img src={receipeDetails.image}  width='100%' mix-height='100%'/> 
           </Container1>
@@ -30,9 +43,16 @@ const Recipe = () => {
             <Button className= {activeSelection === "Instructions" ? "active" : ""}
               onClick={() => setActiveSelection("Instructions")}>
                 {t("Instruction")}
-              </Button>
+            </Button>
+
             <Button className= {activeSelection === "Ingredients" ? "active" : ""}
-              onClick={() => setActiveSelection("Ingredients")} >{t("Ingredients")}</Button>
+              onClick={() => setActiveSelection("Ingredients")} >{t("Ingredients")}
+            </Button>
+      
+            <Button className= {activeSelection === "RecipeImage" ? "active" : ""}
+              onClick={() => setActiveSelection("RecipeImage")} >{t("RecipeImage")}
+           </Button>
+
             { activeSelection === "Instructions"  && (
               <div key={receipeDetails.id}> 
               <h5>  {receipeDetails.summary?.replace(/<[^>]*>?/gm, '')} </h5> 
@@ -46,8 +66,14 @@ const Recipe = () => {
                 )} 
               </ul>
             )}
+
+            { activeSelection === "cardImage"  && (
+             <Image key={recipeCard.id}> 
+                <img src={recipeCard.url} alt=''/>
+                {/* <a href={recipeCard?.url} target="_blank" rel="noopener noreferrer" download></a> */}
+              </Image>
+            )} 
          </Container2>
-       
        </Grid>
         </>
     );
@@ -81,6 +107,22 @@ grid-template-areas:
 
 grid-template-columns: 0.5fr 1fr;
 `;
+
+const Image = styled.div`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  margin: 0.5em 1em;
+  padding: 0.25em 1em;
+  height: 50vh;
+
+    img{
+      height: 90%;
+      width: 80%;
+      margin: auto 20px;
+    }
+`
 
 
 

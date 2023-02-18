@@ -1,14 +1,19 @@
 import React from 'react'
+import styled from 'styled-components'
 import Popular from '../components/Popular'
-import Veggies from '../components/Veggies'
+
 
 const Home = () => {
   return (
     <>
     <Popular />
-    <Veggies />
     </>
   )
 }
+
+
+
+ 
+ 
 
 export default Home
