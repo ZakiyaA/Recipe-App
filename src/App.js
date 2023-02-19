@@ -6,10 +6,11 @@ import BackToHome from "./components/BackToHome";
 
 
 function App() {
-  
+
   return (
     <div >
        <BrowserRouter>
+       { }
          <BackToHome/>
          <Search/>
          <Category/>

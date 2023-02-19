@@ -10,7 +10,7 @@ const Recipe = () => {
   const [activeSelection, setActiveSelection] = useState("Instructions");
   const [recipeCard, setRecipeCard] = useState()
   const recipeID  = useParams();
-
+  
   const fetchRecipe = async () => {
   const response = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/information?apiKey=a428daa4b83f4cb0928f1981f04cd24d`);
   const recipes = await response.json();
@@ -20,7 +20,6 @@ const Recipe = () => {
    const fetchRecipeCard = async () => {
     const response1 = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/card?apiKey=a428daa4b83f4cb0928f1981f04cd24d`);
     const cards = await response1.json();
-    // console.log(cards)
     setRecipeCard(cards);
      }
 
@@ -50,7 +49,8 @@ const Recipe = () => {
             </Button>
       
             <Button className= {activeSelection === "RecipeImage" ? "active" : ""}
-              onClick={() => setActiveSelection("RecipeImage")} >{t("RecipeImage")}
+              onClick={() => setActiveSelection("RecipeImage")} > 
+               <a href={'https://drive.google.com/file/d/1BBSkIguKvhoC0SN_T_LItIaIGKEeX4zd/view?usp=sharing'} target="_blank" rel="noopener noreferrer" download> {t("RecipeImage")}</a>
            </Button>
 
             { activeSelection === "Instructions"  && (
@@ -67,12 +67,11 @@ const Recipe = () => {
               </ul>
             )}
 
-            { activeSelection === "cardImage"  && (
-             <Image key={recipeCard.id}> 
-                <img src={recipeCard.url} alt=''/>
-                {/* <a href={recipeCard?.url} target="_blank" rel="noopener noreferrer" download></a> */}
-              </Image>
-            )} 
+            {/* { activeSelection === "RecipeImage"  && (
+
+              <a href={'https://drive.google.com/file/d/1BBSkIguKvhoC0SN_T_LItIaIGKEeX4zd/view?usp=sharing'} target="_blank" rel="noopener noreferrer" download> kkkk</a>
+           
+            ) } */}
          </Container2>
        </Grid>
         </>
@@ -91,10 +90,19 @@ const Button = styled.button`
       background: palevioletred;
       color: white;
     }
+
+    a {
+      text-decoration: none;
+      color: palevioletred;
+    }
 `;
 
 const Container1 = styled.div`
   text-align: left;
+  img{
+    height: 50%;
+    width: 100%;
+  }
 `
 
 const Container2 = styled(Container1)``;
@@ -104,8 +112,7 @@ display: grid;
 grid-template-areas:
   "Container1 Container2";
   grid-gap: 10px;
-
-grid-template-columns: 0.5fr 1fr;
+grid-template-columns: 0.8fr 1fr;
 `;
 
 const Image = styled.div`
@@ -118,9 +125,9 @@ const Image = styled.div`
   height: 50vh;
 
     img{
-      height: 90%;
-      width: 80%;
-      margin: auto 20px;
+      height: 100%;
+      width: 100%;
+      // margin: auto 20px;
     }
 `
 

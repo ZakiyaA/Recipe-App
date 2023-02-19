@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import '@splidejs/react-splide/css';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import i18n from '../i18n';
 import {useTranslation } from "react-i18next";
 
@@ -34,7 +34,7 @@ useEffect(() => {
 return (
   <>
   <Title>
-  <h2 >{t("RecipeList")}</h2>
+  <h1 >{t("RecipeList")}</h1>
   </Title>
    <Wrapper>
    <CardContainer>

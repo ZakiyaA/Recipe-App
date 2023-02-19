@@ -1,19 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs'; 
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 const BackToHome = () => {
 const navigate = useNavigate();
 const { t } = useTranslation();
+const url = useLocation();
+
+if (url.pathname !== '/') {  
   return (
-      
-      <>
-      
-   
-    <Button onClick={()=>navigate("/")}><BsFillArrowLeftCircleFill/> {t("Home")}</Button>
+    <>
+      <Button onClick={()=>navigate("/")}><BsFillArrowLeftCircleFill/> {t("Home")}</Button>
     </>
   )
+ }
 }
 
 const Button = styled.button`
