@@ -1,21 +1,25 @@
-# Wanderlusters
-## LightHouseLabs Final Project
-
-## ******##******
-
+# Recipe App
 
 ## HomePage
 
-!["HomePage"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/HomePage-ArabicLanguage.png?raw=true)
+!["HomePage-Arabic"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/HomePage-ArabicLanguage.png?raw=true)
+
+
+
+
+!["HomePage-English"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/HomePage-English-Language.pngg?raw=true)
+
+
+
 
 ## SigUp Page 
 
-!["SigUp Page"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/HomePage-ArabicLanguage.png?raw=true)
+!["Recipe Details"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/RecipeDetails.png?raw=true)
 
 ## SigIn Page 
 
-!["SigIn Page"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/HomePage-ArabicLanguage.png?raw=true)
+!["RecipeImage"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/RecipeImage.png?raw=true)
 
 ## Map
 
-!["Map"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/HomePage-ArabicLanguage.png?raw=true)
+!["Search Page"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/SearchPage.png?raw=true)
