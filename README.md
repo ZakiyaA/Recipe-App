@@ -28,7 +28,9 @@ Recipe App is a React-based project designed to retrieve data from spoonacular A
         setRecipetDetails(recipes);
     }
 
-Set up multilingual using the i18n module. You can review i18n documentation https://www.i18next.com/. Also, I found this very helpful plog https://medium.com/how-to-react/setup-multilingual-in-react-js-using-i18n-module-33b1bfbb57cd .
+Set up multilingual using the i18n module. You can review i18n documentation https://www.i18next.com/. Also, I found this very helpful plog https://medium.com/how-to-react/setup-multilingual-in-react-js-using-i18n-module-33b1bfbb57cd.
+
+
 
 ## HomePage-Arabic
 

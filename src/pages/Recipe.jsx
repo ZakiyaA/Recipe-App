@@ -10,7 +10,6 @@ const Recipe = () => {
   const [activeSelection, setActiveSelection] = useState("Instructions");
   const [recipeCard, setRecipeCard] = useState()
   const recipeID  = useParams();
-  console.log(process.env.REACT_APP_API_KEY)
   const fetchRecipe = async () => {
   const response = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
   const recipes = await response.json();

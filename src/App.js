@@ -3,20 +3,22 @@ import Category from "./components/Category";
 import {BrowserRouter} from "react-router-dom";
 import Search from "./components/Search";
 import BackToHome from "./components/BackToHome";
+import logo from "../src/assets/images/logo.png"
 
 
 function App() {
-  console.log(process.env.REACT_APP_API_KEY)
   return (
-    <div >
-      <BrowserRouter>
-      { }
-        <BackToHome/>
-        <Search/>
-        <Category/>
-        <Pages />
-      </BrowserRouter>
+    <>
+      <img src={logo} height='150' margin='50%'/>
+      <div className="App">
+        <BrowserRouter>
+          <BackToHome/>
+          <Search/>
+          <Category/>
+          <Pages />
+        </BrowserRouter>
     </div>
+    </>
   );
 }
 
