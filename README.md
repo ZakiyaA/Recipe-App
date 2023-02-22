@@ -17,7 +17,7 @@ React-based projects designed to retrieve data from spoonacular API which provid
         const api = await fetch ( `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=15`)
         const data = await api.json();
         setPopular(data.recipes)
-    }
+       }
     };
 
 * Get an analyzed breakdown of a recipe's instructions. Each step is enriched with the ingredients and equipment required.
@@ -25,7 +25,7 @@ React-based projects designed to retrieve data from spoonacular API which provid
     ``` const fetchRecipe = async () => {
     const response = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
     const recipes = await response.json();
-        setRecipetDetails(recipes);
+    setRecipetDetails(recipes);
     }
 
 * Set up multilingual using the i18n module. You can review i18n documentation https://www.i18next.com/. Also, I found this very helpful plog https://medium.com/how-to-react/setup-multilingual-in-react-js-using-i18n-module-33b1bfbb57cd .
