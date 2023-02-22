@@ -12,14 +12,14 @@
 
 
 
-## SigUp Page 
+## Recipe Details
 
 !["Recipe Details"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/RecipeDetails.png?raw=true)
 
-## SigIn Page 
+## RecipeImage 
 
 !["RecipeImage"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/RecipeImage.png?raw=true)
 
-## Map
+## Search Page
 
 !["Search Page"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/SearchPage.png?raw=true)
