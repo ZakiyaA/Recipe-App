@@ -11,7 +11,7 @@ const Cuisine = () => {
   document.body.dir = i18n.dir();
   const { t } = useTranslation();
   const getCuisine = async (name) => {
-  const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=a428daa4b83f4cb0928f1981f04cd24d&cuisine=${name}`);
+  const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`);
   const receipes = await response.json();
     setCuisine(receipes.results);
    }

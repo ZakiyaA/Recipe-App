@@ -6,17 +6,16 @@ import BackToHome from "./components/BackToHome";
 
 
 function App() {
-
+  console.log(process.env.REACT_APP_API_KEY)
   return (
     <div >
-       <BrowserRouter>
-       { }
-         <BackToHome/>
-         <Search/>
-         <Category/>
-         <Pages />
-        
-       </BrowserRouter>
+      <BrowserRouter>
+      { }
+        <BackToHome/>
+        <Search/>
+        <Category/>
+        <Pages />
+      </BrowserRouter>
     </div>
   );
 }

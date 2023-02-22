@@ -8,9 +8,6 @@ import {useTranslation } from "react-i18next";
 
 const Popular = () => {
 const [popular, setPopular] = useState([]);
-const [activeSelection, setActiveSelection] = useState("Recipe Details");
-const [recipeCard, setRecipeCard] = useState()
-const recipeID  = useParams();
 document.body.dir = i18n.dir();
 const { t } = useTranslation();
 
@@ -19,7 +16,7 @@ const getPopular = async () => {
     if(check) {
       setPopular(JSON.parse(check));
     } else {
-    const api = await fetch ( `https://api.spoonacular.com/recipes/random?apiKey=a428daa4b83f4cb0928f1981f04cd24d&number=15`)
+    const api = await fetch ( `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=15`)
     const data = await api.json();
     localStorage.setItem("popular", JSON.stringify(data.recipes));
     setPopular(data.recipes)

@@ -10,15 +10,15 @@ const Recipe = () => {
   const [activeSelection, setActiveSelection] = useState("Instructions");
   const [recipeCard, setRecipeCard] = useState()
   const recipeID  = useParams();
-  
+  console.log(process.env.REACT_APP_API_KEY)
   const fetchRecipe = async () => {
-  const response = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/information?apiKey=a428daa4b83f4cb0928f1981f04cd24d`);
+  const response = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
   const recipes = await response.json();
     setRecipetDetails(recipes);
   }
   
   const fetchRecipeCard = async () => {
-    const response1 = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/card?apiKey=a428daa4b83f4cb0928f1981f04cd24d`);
+    const response1 = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/card?apiKey=${process.env.REACT_APP_API_KEY}`);
     const cards = await response1.json();
     console.log(cards)
     setRecipeCard(cards);
