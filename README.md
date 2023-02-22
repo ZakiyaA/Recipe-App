@@ -3,6 +3,7 @@
 React-based projects designed to retrieve data from spoonacular API which provide the following:
 
 * Search through thousands of recipes using advanced filtering and ranking. NOTE: This method combines searching by query, by ingredients, and by nutrients into one endpoint.
+
   ``` const getSearched = async (name) => {
      const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=15&query=${name}`);
     const receipes = await response.json();
@@ -11,6 +12,7 @@ React-based projects designed to retrieve data from spoonacular API which provid
 
 
 * Find random (popular) recipes. If you need to filter recipes by diet, nutrition etc. you might want to consider using the complex recipe search endpoint and set the sort request parameter to random.
+
    ``` const getPopular = async () => {
         const api = await fetch ( `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=15`)
         const data = await api.json();
@@ -19,6 +21,7 @@ React-based projects designed to retrieve data from spoonacular API which provid
     };
 
 * Get an analyzed breakdown of a recipe's instructions. Each step is enriched with the ingredients and equipment required.
+
     ``` const fetchRecipe = async () => {
     const response = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
     const recipes = await response.json();
