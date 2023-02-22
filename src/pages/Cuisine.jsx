@@ -14,18 +14,17 @@ const Cuisine = () => {
   const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`);
   const receipes = await response.json();
     setCuisine(receipes.results);
-   }
-   useEffect(() => {
+  }
+  useEffect(() => {
     getCuisine(cuisineType.type);
     } , [cuisineType.type]);
     
     return (
       <>
-     <Wrapper>
-   <CardContainer>
+      <Wrapper>
+        <CardContainer>
     {cuisine.map((recipe) => {
       return (
-       
           <Card key={recipe.id}>
             <img src={recipe.image} width='100%' mix-height='100%'/> 
             <p>{recipe.title}</p> 
@@ -33,11 +32,10 @@ const Cuisine = () => {
               <button >{t("RecipeDetails")} </button>
             </Link>
           </Card>
-       
       );
     })}
-     </CardContainer>
-   </Wrapper>
+      </CardContainer>
+    </Wrapper>
     </>
 );
 }

@@ -5,7 +5,6 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import i18n from '../i18n';
 import {useTranslation } from "react-i18next";
 
-
 const Popular = () => {
 const [popular, setPopular] = useState([]);
 document.body.dir = i18n.dir();
@@ -100,9 +99,7 @@ const Card = styled.div`
     padding: 0.25em 1em;
       &:hover {
         cursorr: pointer;
-   }
-
-  
+  }
   }
 `;
 
