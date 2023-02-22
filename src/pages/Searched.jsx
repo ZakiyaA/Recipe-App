@@ -24,22 +24,20 @@ const { t } = useTranslation();
   return (
       <>
   <Wrapper>
-   <CardContainer>
+    <CardContainer>
     {searchedRecipes.map((recipe) => {
       return (
-       
-          <Card >
-            <img src={recipe.image} width='100%' mix-height='100%'/> 
-            <p>{recipe.title}</p> 
-            <Link to={'/recipe/' + recipe.id} >  
-              <button >{t("RecipeDetails")} </button>
-            </Link>
-          </Card>
-       
+        <Card  key={recipe.id}>
+          <img src={recipe.image} width='100%' mix-height='100%'/> 
+          <p>{recipe.title}</p> 
+          <Link to={'/recipe/' + recipe.id} >  
+            <button >{t("RecipeDetails")} </button>
+          </Link>
+        </Card>
       );
     })}
-     </CardContainer>
-   </Wrapper>
+      </CardContainer>
+  </Wrapper>
     </>
 );
 }

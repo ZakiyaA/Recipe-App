@@ -15,13 +15,14 @@ const Recipe = () => {
   const response = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/information?apiKey=a428daa4b83f4cb0928f1981f04cd24d`);
   const recipes = await response.json();
     setRecipetDetails(recipes);
-   }
+  }
   
-   const fetchRecipeCard = async () => {
+  const fetchRecipeCard = async () => {
     const response1 = await fetch(`https://api.spoonacular.com/recipes/${recipeID.name}/card?apiKey=a428daa4b83f4cb0928f1981f04cd24d`);
     const cards = await response1.json();
+    console.log(cards)
     setRecipeCard(cards);
-     }
+    }
 
   useEffect(() => {
     fetchRecipe();
@@ -50,19 +51,19 @@ const Recipe = () => {
       
             <Button className= {activeSelection === "RecipeImage" ? "active" : ""}
               onClick={() => setActiveSelection("RecipeImage")} > 
-               <a href={'https://drive.google.com/file/d/1BBSkIguKvhoC0SN_T_LItIaIGKEeX4zd/view?usp=sharing'} target="_blank" rel="noopener noreferrer" download> {t("RecipeImage")}</a>
-           </Button>
+              <a href={'https://spoonacular.com/recipeCardImages/recipeCard-1676916742412.png'} target="_blank" rel="noopener noreferrer" download> {t("RecipeImage")}</a>
+            </Button>
 
             { activeSelection === "Instructions"  && (
               <div key={receipeDetails.id}> 
-              <h5>  {receipeDetails.summary?.replace(/<[^>]*>?/gm, '')} </h5> 
-              <h5>  {receipeDetails.instructions?.replace(/<[^>]*>?/gm, '')} </h5> 
+              <h5>  - {receipeDetails.summary?.replace(/<[^>]*>?/gm, '')} </h5> 
+              <h5>  - {receipeDetails.instructions?.replace(/<[^>]*>?/gm, '')} </h5> 
               </div>
             )}
             { activeSelection === "Ingredients"  && (
               <ul>
                 {receipeDetails.extendedIngredients.map( ingredient => 
-                   <li key={ingredient.id}>{ingredient.name}</li>
+                <li key={ingredient.id}>{ingredient.name}</li>
                 )} 
               </ul>
             )}
@@ -70,10 +71,9 @@ const Recipe = () => {
             {/* { activeSelection === "RecipeImage"  && (
 
               <a href={'https://drive.google.com/file/d/1BBSkIguKvhoC0SN_T_LItIaIGKEeX4zd/view?usp=sharing'} target="_blank" rel="noopener noreferrer" download> kkkk</a>
-           
             ) } */}
-         </Container2>
-       </Grid>
+        </Container2>
+      </Grid>
         </>
     );
 }

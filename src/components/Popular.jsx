@@ -15,10 +15,10 @@ document.body.dir = i18n.dir();
 const { t } = useTranslation();
 
 const getPopular = async () => {
-   const check = localStorage.getItem("popular");
-   if(check) {
-     setPopular(JSON.parse(check));
-   } else {
+  const check = localStorage.getItem("popular");
+    if(check) {
+      setPopular(JSON.parse(check));
+    } else {
     const api = await fetch ( `https://api.spoonacular.com/recipes/random?apiKey=a428daa4b83f4cb0928f1981f04cd24d&number=15`)
     const data = await api.json();
     localStorage.setItem("popular", JSON.stringify(data.recipes));
@@ -36,23 +36,21 @@ return (
   <Title>
   <h1 >{t("RecipeList")}</h1>
   </Title>
-   <Wrapper>
-   <CardContainer>
+  <Wrapper>
+    <CardContainer>
     {popular.map((recipe) => {
       return (
-       
-          <Card key={recipe.id}>
-            <img src={recipe.image} width='100%' mix-height='100%'/> 
-            <p>{recipe.title}</p> 
-            <Link to={'/recipe/' + recipe.id} >  
-              <button >{t("RecipeDetails")} </button>
-            </Link>
-          </Card>
-       
+        <Card key={recipe.id}>
+          <img src={recipe.image} width='100%' mix-height='100%'/> 
+          <p>{recipe.title}</p> 
+          <Link to={'/recipe/' + recipe.id} >  
+            <button >{t("RecipeDetails")} </button>
+          </Link>
+        </Card>
       );
     })}
-     </CardContainer>
-   </Wrapper>
+    </CardContainer>
+  </Wrapper>
     </>
 );
 }

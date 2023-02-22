@@ -25,7 +25,7 @@ resources: {
             "VeggiesPicks": "Veggies Picks",
             "cardImage": "Card Image",
             "RecipeDetails": "Recipe Details",
-            "RecipeImage": "Recipe Image"
+            "RecipeImage": "Download Recipe Image"
           }
         
      
@@ -46,7 +46,7 @@ resources: {
         "VeggiesPicks": "مختارات الخضار",
         "cardImage": "صورة الوصفة",
         "RecipeDetails": "تفاصبل الوصفة",
-        "RecipeImage": "صورة الوصفة"
+        "RecipeImage": " حمل صورة الوصفة "
       },
     },
   },
