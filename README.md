@@ -57,3 +57,56 @@ Set up multilingual using the i18n module. You can review i18n documentation htt
 ## Search Page
 
 !["Search Page"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/SearchPage.png?raw=true)
+
+
+## Integrate Google Translator to Our App
+
+* Add theses scripts to the first top of head tag in index.html in your project 
+
+```<script type="text/javascript">
+      function googleTranslateFunction(){
+      new google.translate.TranslateElement({pageLanguage:'en', layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');
+      } 
+   </script>
+      
+   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateFunction">
+   </script>
+```
+
+* Add the following css code in index.css 
+
+```.goog-te-gadget-simple {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: "Kanit", sans-serif;
+  background-color: palevioletred;
+  border: none;
+  font-size: 13pt;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 11px;
+  zoom: 1;
+  display: inline;
+}
+.goog-te-gadget-icon {
+  margin-left: 2px;
+  width: 2px;
+  height: 0px;
+  border: none;
+  vertical-align: middle;
+}
+
+.VIpgJd-ZVi9od-xl07Ob-lTBxed {
+  color: white !important;
+}
+
+.goog-te-gadget-simple .VIpgJd-ZVi9od-xl07Ob-lTBxed span { 
+  color: white !important;
+}
+
+.VIpgJd-ZVi9od-vH1Gmf-ibnC6b div, .VIpgJd-ZVi9od-vH1Gmf-ibnC6b a  {
+  color: palegoldenrod !important;
+}```
+
+
