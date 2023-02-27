@@ -107,6 +107,15 @@ Set up multilingual using the i18n module. You can review i18n documentation htt
 
 .VIpgJd-ZVi9od-vH1Gmf-ibnC6b div, .VIpgJd-ZVi9od-vH1Gmf-ibnC6b a  {
   color: palegoldenrod !important;
-}```
+}
+```
+## HomePage-Arabic
+
+!["HomePage-Arabic"](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/screencapture-localhost-3000-2023-02-27-11_50_37.png?raw=true)
+
+## Live HomePage
+
+!["HomePage "](https://github.com/ZakiyaA/Recipe-App/blob/main/src/assets/images/App-with-Google-Translator.gif)
+
 
 
