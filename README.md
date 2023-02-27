@@ -1,6 +1,6 @@
-# Recipe App
+# Fresher
 
-Recipe App is a React-based project designed to retrieve data from spoonacular API which provide the following:
+Fresher is a React-based project designed to retrieve data from spoonacular API which provide the following:
 
 * Search through thousands of recipes using advanced filtering and ranking. NOTE: This method combines searching by query, by ingredients, and by nutrients into one endpoint.
 
