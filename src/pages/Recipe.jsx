@@ -47,11 +47,13 @@ const Recipe = () => {
             <Button className= {activeSelection === "Ingredients" ? "active" : ""}
               onClick={() => setActiveSelection("Ingredients")} >{t("Ingredients")}
             </Button>
-      
+             
+            {/* <a href={recipeCard.url} target="_blank" rel="noopener noreferrer" download>  */}
             <Button className= {activeSelection === "RecipeImage" ? "active" : ""}
               onClick={() => setActiveSelection("RecipeImage")} > 
-              <a href={'https://spoonacular.com/recipeCardImages/recipeCard-1676916742412.png'} target="_blank" rel="noopener noreferrer" download> {t("RecipeImage")}</a>
+              <a href={'https://spoonacular.com/recipeCardImages/recipeCard-1677516383871.png'} target="_blank" rel="noopener noreferrer" download> {t("RecipeImage")}</a>
             </Button>
+            {/* </a> */}
 
             { activeSelection === "Instructions"  && (
               <div key={receipeDetails.id}> 
@@ -67,10 +69,10 @@ const Recipe = () => {
               </ul>
             )}
 
-            {/* { activeSelection === "RecipeImage"  && (
+            {/* { activeSelection === "RecipeImage"  && ( */}
 
-              <a href={'https://drive.google.com/file/d/1BBSkIguKvhoC0SN_T_LItIaIGKEeX4zd/view?usp=sharing'} target="_blank" rel="noopener noreferrer" download> kkkk</a>
-            ) } */}
+             {/* <a href={recipeCard.url} target="_blank" rel="noopener noreferrer" download> </a>
+             ) } */}
         </Container2>
       </Grid>
         </>

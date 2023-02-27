@@ -11,7 +11,7 @@ const url = useLocation();
 if (url.pathname !== '/') {  
   return (
     <>
-      <Button onClick={()=>navigate("/")}><BsFillArrowLeftCircleFill/> {t("Home")}</Button>
+      <Button onClick={()=>navigate("/")}><BsFillArrowLeftCircleFill/> {t("Home Page")}</Button>
     </>
   )
  }

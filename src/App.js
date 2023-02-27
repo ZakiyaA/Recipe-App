@@ -15,7 +15,7 @@ function App() {
           <BackToHome/>
           <Search/>
           <Category/>
-          <Pages />
+          <Pages/>
         </BrowserRouter>
     </div>
     </>

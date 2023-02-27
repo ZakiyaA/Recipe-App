@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import '@splidejs/react-splide/css';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import i18n from '../i18n';
 import {useTranslation } from "react-i18next";
+import axios from 'axios';
 
 const Popular = () => {
 const [popular, setPopular] = useState([]);
@@ -27,6 +28,10 @@ useEffect(() => {
 } , []);
 
 
+
+
+
+
 return (
   <>
   <Title>
@@ -34,7 +39,7 @@ return (
   </Title>
   <Wrapper>
     <CardContainer>
-    {popular.map((recipe) => {
+    {popular.map((recipe) => { 
       return (
         <Card key={recipe.id}>
           <img src={recipe.image} width='100%' mix-height='100%'/> 

@@ -25,7 +25,7 @@ const Search = () => {
         placeholder={t("Recipe")}
       />
     </Form>
-    <LanguageSwitcher/>
+    {/* <LanguageSwitcher/> */}
     </Container >
   )
 }
